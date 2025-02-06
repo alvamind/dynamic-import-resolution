@@ -1,6 +1,6 @@
 {
   "name": "dynamic-import-resolution",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Dynamically resolves import paths and generates import statements for JavaScript and TypeScript projects. Supports ES Modules, CommonJS, and custom configurations.",
   "type": "module",
   "author": "Alvamind",
@@ -28,14 +28,15 @@
   "peerDependencies": {
     "typescript": "^5.0.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "alvamind-tools": "^1.0.23"
+  },
   "scripts": {
-    "build": "tsc -p tsconfig.build.json",
+    "build": "rm -rf dist && tsc -p tsconfig.build.json",
     "source": "generate-source output=documentation.md exclude=dist/,node_modules/,.git/",
     "commit": "commit",
     "clean": "clean",
     "split-code": "split-code source=combined.ts markers=src/,lib/ outputDir=./output",
-    "publish-npm": "publish-npm patch",
     "patch:apply": "patch -p2 -F3 -b < patch.diff",
     "patch:del-ori": "find . -type f -name \"*.ts.orig\" -delete",
     "patch:undo": "find . -type f -name \"*.ts\" -delete && find . -type f -name \"*.ts.orig\" -exec sh -c 'mv \"$0\" \"$(dirname \"$0\")/$(basename \"$0\" .orig)\"' \\;"
