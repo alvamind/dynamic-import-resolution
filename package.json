@@ -1,12 +1,18 @@
 {
   "name": "dynamic-import-resolution",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "Dynamically resolves import paths and generates import statements for JavaScript and TypeScript projects. Supports ES Modules, CommonJS, and custom configurations.",
   "type": "module",
   "author": "Alvamind",
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/alvamind/dynamic-import-resolution.git"
@@ -22,9 +28,7 @@
   "peerDependencies": {
     "typescript": "^5.0.0"
   },
-  "dependencies": {
-    "alvamind-tools": "^1.0.23"
-  },
+  "dependencies": {},
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "source": "generate-source output=documentation.md exclude=dist/,node_modules/,.git/",
