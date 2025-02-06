@@ -1,6 +1,6 @@
 {
   "name": "dynamic-import-resolution",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Dynamically resolves import paths and generates import statements for JavaScript and TypeScript projects. Supports ES Modules, CommonJS, and custom configurations.",
   "type": "module",
   "author": "Alvamind",
